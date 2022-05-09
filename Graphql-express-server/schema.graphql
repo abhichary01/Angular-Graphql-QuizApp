@@ -1,0 +1,37 @@
+type Query {
+
+  questions: [Questions]
+  getUser(userID: ID!): UserDetails
+  getUsers: [UserDetails]
+
+}
+
+type Questions {
+  question: String
+  options: [Options]
+  
+}
+
+
+type Options {
+  answer: String
+  correct: Boolean
+}
+
+ type UserDetails{
+    _id: ID!
+    name: String
+    email: String
+    points: Int
+  }
+
+  input UserInput{
+    name: String
+    email: String
+    points: Int
+  }
+
+type Mutation{
+
+  createUser(userInput: UserInput): UserDetails
+}

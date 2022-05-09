@@ -1,0 +1,79 @@
+[
+    {
+        "question":"What is the capital city of Thailand?",
+        "options": [{
+            
+            "answer": "Kaula Lumpur"
+        },{
+            "answer": "Bangkok",
+            "correct": true
+        },
+        {
+            "answer": "Manila"
+        },{
+            "answer": "Seoul"
+        }]
+    },
+    {
+        "question":"In which Country Abu Dhabi located?",
+        "options": [{
+            "answer": "Kuwait"
+        },{
+            "answer": "Qatar"
+        },
+        {
+            "answer": "Yemen"
+        },{
+
+            "answer": "UAE",
+            "correct": true
+        }]
+    },
+    {
+        "question":"What is Chemical Symbol of Gold?",
+        "options": [{
+            "answer": "Au",
+            "correct": true
+        },{
+            "answer": "Ag"
+        },
+        {
+            "answer": "Ga"
+        },{
+            "answer": "Ge"
+        }]
+    },
+    {
+        "question":"In which city leaning tower of Pisa located?",
+        "options": [{
+            "answer": "Berlin"
+        
+        },{
+            "answer": "Paris"
+        },
+        {
+            
+            "answer": "Rome",
+            "correct": true
+        },{
+            "answer": "Budapest"
+        }]
+    },
+    {
+        "question":"which is the strongest material?",
+        "options": [{
+            "answer": "Diamond",
+            "correct": true
+        },{
+            "answer": "Platinum"
+        },
+        {
+            "answer": "Silver"
+        },{
+            "answer": "Tungsten"
+        }]
+    }
+]
+    
+
+
