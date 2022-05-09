@@ -19,7 +19,7 @@ apolloServer.applyMiddleware({ app, path: '/graphql' });
 // Mongoose connection over atlas database
 // uncomment below code to save the data in atlas database
 
-// mongoose.connect('mongodb+srv://abhishek:7OaBOJR5C4RZmd2I@cluster0.zbp60.mongodb.net/epaisa?retryWrites=true&w=majority'),{
+// mongoose.connect('mongodb+srv://<Username>:<password>@cluster0.zbp60.mongodb.net/epaisa?retryWrites=true&w=majority'),{
 //   useUnifiedTopology: true,
 //   useNewUrlParser: true,
 
