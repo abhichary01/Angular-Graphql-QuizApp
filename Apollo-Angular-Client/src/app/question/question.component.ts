@@ -65,9 +65,7 @@ export class QuestionComponent implements OnInit {
       query: Get_Questions
     })
     .valueChanges.subscribe((results: any) => {
-      console.log(results?.data?.questions)
       this.questionList = results?.data?.questions;
-      alert(JSON.stringify(this.questionList))
       console.log(this.questionList)
       return this.questionList
      
