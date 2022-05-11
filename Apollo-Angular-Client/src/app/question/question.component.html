@@ -5,34 +5,50 @@
       <div class="image">
         <img src="https://img.icons8.com/color/96/000000/angularjs.png" width="100" alt="">
       </div>
+      <!-- Header section start here -->
       <div class="quiz-header mt-2">
         <h4 class="text-xl font-bold">Angular & TypeScript Quiz</h4>
         <span>Welcome {{name}}</span>
       </div>
+      <!-- Header ends here -->
     </div>
-
+<!-- If Quiz section is not completed this section will run -->
     <ng-container *ngIf="!isQuizCompleted">
       <div class="flex justify-around py-3 text-lg font-bold">
+        <!-- Section to dispaly score points starts here -->
         <div class="score">
           <h5>{{points}} Points</h5>
         </div>
+        <!-- ends here -->
+
+        <!-- Section to dispaly questions remaining starts here -->
         <div class="question-remaining">
           <span>Question {{currentQuestion + 1}} of {{questionList.length}}</span>
         </div>
+        <!-- ends here -->
+
+        <!-- Section to dispaly remaining time starts here -->
         <div class="timer">
           <h5>{{counter}} sec ⌛</h5>
         </div>
+        <!-- ends here -->
       </div>
+
+      <!-- Progress bar starts here -->
       <div class="w-full bg-gray-200 rounded-full dark:bg-gray-150">
         <div class="bg-blue-600 h-6 text-lg font-medium text-blue-100 text-center  p-0.5 leading-none rounded-full"
           [ngStyle]="{'width': progress + '%' }"> {{progress}}%</div>
       </div>
+      <!-- ends here -->
+
+      <!-- Sectipon to display questions and options -->
       <div class="question mt-6">
         <div class="bg-white px-3 py-4 border rounded-xl  border-slate-300 w-full ">
           <h3 class="text-xl font-bold">{{questionList[currentQuestion]?.question}}</h3>
         </div>
       </div>
       <div class="options mt-2">
+        <!-- options list -->
         <ol class="list-group list-group-light list-group-numbered" *ngFor="let option of questionList[currentQuestion]?.options">
           <li class="mt-2" (click)="answer(currentQuestion+1,option)">
             <div appChangeBg [isCorrect]="option.correct"
@@ -40,10 +56,11 @@
               {{option.answer}}
             </div>
           </li>
-
         </ol>
       </div>
       <div class="flex justify-between mt-10">
+
+        <!-- button to navigate to prevs question -->
         <button
           class=" inline-flex items-center justify-center w-16 h-16 mr-2 text-indigo-100 transition-colors duration-150 bg-blue-700 rounded-full focus:shadow-outline hover:bg-blue-800"
           (click)="prevQuestion()" [disabled]="currentQuestion === 0">
@@ -52,6 +69,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M15 19l-7-7 7-7"></path>
           </svg>
         </button>
+          <!-- button to reset quiz -->
         <button
           class=" inline-flex items-center justify-center w-16 h-16 mr-2 text-indigo-100 transition-colors duration-150 bg-blue-700 rounded-full focus:shadow-outline hover:bg-blue-800"
           (click)="resetQuiz()">
@@ -62,6 +80,8 @@
             </path>
           </svg>
         </button>
+
+          <!-- button to navigate to next question -->
         <button
           class=" inline-flex items-center justify-center w-16 h-16 mr-2 text-indigo-100 transition-colors duration-150 bg-blue-700 rounded-full focus:shadow-outline hover:bg-blue-800"
           (click)="nextQuestion()" [disabled]="currentQuestion === questionList.length -1">
@@ -73,6 +93,7 @@
       </div>
     </ng-container>
 
+    <!-- code snippet which will be shoqn if the quiz is completed -->
     <ng-container *ngIf="isQuizCompleted">
       <div class="row flex justify-center">
         <div class="text-center col-md-6 col-sm-12">
@@ -84,6 +105,8 @@
           <p>Total Wrong Answered : {{incorrectAnswer}} </p>
           <p>Total unattempted  : {{unattendedAnswer}} </p>
           <p class="text-xl font-bold">Your Score : {{points}} Points </p>
+
+          <!-- API to save the user deatils and score -->
           <button
           class="transition mt-5 ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 duration-300 shadow-lg shadow-blue-500/50 py-2 px-3 rounded-lg font-bold text-white hover:bg-blue-600 "
           (click)="createUser(this.name, this.email, this.points)">Save results</button>

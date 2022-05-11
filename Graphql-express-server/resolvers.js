@@ -5,12 +5,10 @@ import {User} from './model/User.js'
 export const resolvers = {
   // Code section to query/fetch the apis
   Query: {
-
     // Api to get questions
     questions: () => Questions.findAll(),
-     // API to get user details
 
-    
+    // API to get user details
     getUser: async (_, args) => {
       try {
         const { userID } = args;
@@ -19,13 +17,15 @@ export const resolvers = {
         throw new Error(error);
       }
     },
+
+    // API to get all users data
     getUsers: async (_, args) => {
-        try {
-          return await User.find();
-        } catch (error) {
-          throw new Error(error);
-        }
-      },
+      try {
+        return await User.find();
+      } catch (error) {
+        throw new Error(error);
+      }
+    },
 
   },
 

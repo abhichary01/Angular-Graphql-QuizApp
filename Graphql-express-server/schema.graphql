@@ -1,37 +1,47 @@
+# Type Query will fetch data from the server and  will return
+# the data in the form of following schema
+# The exclamation mark(!) here states that the field cannot be empty
 type Query {
-
-  questions: [Questions]
+  questions: [Questions!]
   getUser(userID: ID!): UserDetails
   getUsers: [UserDetails]
-
 }
 
+# Type Questions schema will accept a question as a string
+# and an array of data as options
 type Questions {
-  question: String
+  question: String!
   options: [Options]
-  
 }
 
-
+# Type Options schema will accept  two parameters one answer as a string
+# And Another as a boolean value like true or false here
 type Options {
-  answer: String
+  answer: String!
   correct: Boolean
 }
 
- type UserDetails{
-    _id: ID!
-    name: String
-    email: String
-    points: Int
-  }
+# This schema is used in code to show details or output when we search
+# for a user by Id
+type UserDetails{
+  _id: ID!
+  name: String!
+  email: String!
+  points: Int!
+}
 
-  input UserInput{
-    name: String
-    email: String
-    points: Int
-  }
+# This Schema is used in code to take Input from client and store the 
+# user data
+input UserInput{
+  name: String!
+  email: String!
+  points: Int!
+}
 
+# A GraphQL mutation is an API operation that modifies data we can create
+# update and delete with this type
 type Mutation{
-
-  createUser(userInput: UserInput): UserDetails
+  # create user will be resolver function, will take userInput values as
+  # input and return details in UserDeatils format
+  createUser(userInput: UserInput!): UserDetails
 }
