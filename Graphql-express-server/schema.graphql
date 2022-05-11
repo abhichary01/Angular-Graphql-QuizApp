@@ -33,9 +33,9 @@ type UserDetails{
 # This Schema is used in code to take Input from client and store the 
 # user data
 input UserInput{
-  name: String!
-  email: String!
-  points: Int!
+  name: String
+  email: String
+  points: Int
 }
 
 # A GraphQL mutation is an API operation that modifies data we can create
