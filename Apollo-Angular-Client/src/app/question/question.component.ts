@@ -3,9 +3,6 @@ import { Apollo} from 'apollo-angular';
 import {Get_Questions, Update_Score} from '../graphql/schema'
 import { interval } from 'rxjs';
 
-
-
-
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
