@@ -1,35 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo} from 'apollo-angular';
-import { gql } from 'apollo-angular';
+import {Get_Questions, Update_Score} from '../graphql/schema'
 import { interval } from 'rxjs';
 
 
-// Graphql Schema to fetch questions API
-const Get_Questions = gql`
-query{
-  questions {
-    question
-    options {
-      answer
-      correct
-    }
-    
-  }
-}
-`;
 
-// Graphql Schema to update user details API
-const Update_Score = gql`
-mutation ($name: String,$email: String,$points: Int){
-  createUser(userInput:{name: $name, email: $email, points: $points}){
-    _id
-    name
-    email
-    points
-  }
-}
-
-`
 
 @Component({
   selector: 'app-question',
